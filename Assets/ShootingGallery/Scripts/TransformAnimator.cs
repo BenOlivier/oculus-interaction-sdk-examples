@@ -57,10 +57,10 @@ public class TransformAnimator : AnimationTime
         switch (transformToAnimate)
         {
             case transformComponent.position:
-                startValue = Vector3.zero;
+                startValue = transform.localPosition;
                 break;
             case transformComponent.rotation:
-                startValue = Vector3.zero;
+                startValue = transform.localRotation.eulerAngles;
                 break;
             case transformComponent.scale:
                 startValue = transform.localScale;
