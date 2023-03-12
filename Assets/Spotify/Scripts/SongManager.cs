@@ -1,36 +1,88 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SongManager : MonoBehaviour
 {
     [SerializeField]
     private TransformAnimator transformAnimator;
 
-    public int songIndex = 0;
+    [SerializeField]
+    private Transform[] songs;
 
-    private Vector3 prevDirection = new Vector3(0.15f, 0, 0);
-    private Vector3 nextDirection = new Vector3(-0.15f, 0, 0);
+    [SerializeField]
+    private float songSpacing = 0.15f;
+
+    [Serializable]
+    public struct SongData
+    {
+        public Texture2D albumArt;
+        public string title;
+        public string artist;
+    }
+
+    [SerializeField]
+    private SongData[] songData;
+
+    private int currentIndex = 0;
+    private int newIndex = 1;
+    private int albumIndex = 0;
+
+    private bool isAnimating = false;
 
     [ContextMenu("Previous")]
     public void PreviousSong()
     {
-        transformAnimator.closedTarget = transform.localPosition;
-        transformAnimator.openTarget = transform.localPosition + prevDirection;
-        transformAnimator.Open();
+        if (isAnimating) return;
 
-        songIndex--;
-        print("Currently listening to song" + songIndex);
+        UpdateIndices(-1);
+        UpdateNewSongData(songs[newIndex]);
+        songs[newIndex].localPosition = Vector3.left * songSpacing;
+
+        transformAnimator.openTarget = Vector3.right * songSpacing;
+        transformAnimator.Open();
+        isAnimating = true;
     }
 
     [ContextMenu("Next")]
     public void NextSong()
     {
-        transformAnimator.closedTarget = transform.localPosition;
-        transformAnimator.openTarget = transform.localPosition + nextDirection;
-        transformAnimator.Open();
+        if (isAnimating) return;
 
-        songIndex++;
-        print("Currently listening to song" + songIndex);
+        UpdateIndices(1);
+        UpdateNewSongData(songs[newIndex]);
+        songs[newIndex].localPosition = Vector3.right * songSpacing;
+
+        transformAnimator.openTarget = Vector3.left * songSpacing;
+        transformAnimator.Open();
+        isAnimating = true;
+    }
+
+    private void UpdateIndices(int delta)
+    {
+        albumIndex += delta;
+        albumIndex = albumIndex > songData.Length - 1 ?
+            0 : albumIndex < 0 ? songData.Length - 1 : albumIndex;
+        newIndex = currentIndex == 0 ? 1 : 0;
+    }
+
+    private void UpdateNewSongData(Transform song)
+    {
+        song.gameObject.SetActive(true);
+        song.GetComponentInChildren<MeshRenderer>().material.SetTexture("_MainTex", songData[albumIndex].albumArt);
+        TextMeshProUGUI[] text = song.GetComponentsInChildren<TextMeshProUGUI>();
+        text[0].text = songData[albumIndex].title;
+        text[1].text = songData[albumIndex].artist;
+    }
+
+    public void ScrollComplete()
+    {
+        transformAnimator.transform.localPosition = Vector3.zero;
+        songs[newIndex].localPosition = Vector3.zero;
+        songs[currentIndex].gameObject.SetActive(false);
+        currentIndex = newIndex;
+        isAnimating = false;
     }
 }

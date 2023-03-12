@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class AnimationTime : MonoBehaviour
+public class ValueAnimator : MonoBehaviour
 {
+    public UnityEvent OnCompleteCallback;
+
     [SerializeField] private AnimationCurve openCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     [SerializeField] private AnimationCurve closeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     [SerializeField] private float openDuration = 1.0f, closeDuration = 1.0f;
@@ -31,7 +34,12 @@ public class AnimationTime : MonoBehaviour
     public float AnimationTimeValue()
     {
         float completion = (Time.time - startTime) / duration;
-        if (completion >= 1.0f) IsAnimating = false;
+        if (completion >= 1.0f)
+        {
+            OnCompleteCallback.Invoke();
+            IsAnimating = false;
+            return 1.0f;
+        }
         return animationCurve.Evaluate(completion);
     }
 }

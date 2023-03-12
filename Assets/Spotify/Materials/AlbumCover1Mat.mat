@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MBDTFMat
+  m_Name: AlbumCover1Mat
   m_Shader: {fileID: 4800000, guid: f9db7c7f4a8344ca9a3829c3b919b2c6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

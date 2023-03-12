@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransformAnimator : AnimationTime
+public class TransformAnimator : ValueAnimator
 {
     [HideInInspector] public enum transformComponent { position, rotation, scale };
     [HideInInspector] public Vector3 startValue, targetValue;
@@ -30,7 +30,7 @@ public class TransformAnimator : AnimationTime
 
     public virtual void Update()
     {
-        if (IsAnimating)
+        if (IsAnimating && AnimationTimeValue() < 1.0f)
         {
             switch (transformToAnimate)
             {
