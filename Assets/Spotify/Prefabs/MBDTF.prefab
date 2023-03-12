@@ -7,6 +7,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829852444410436365, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_text
+      value: All Of The Lights
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883530610679971, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883530610679971, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883530610679971, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883530610679971, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883530610679971, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883530610679971, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488744864692305227, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488744864692305227, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488744864692305227, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488744864692305227, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488744864692305227, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488744864692305227, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567821098192574786, guid: 8d214714f40304d86a93978406dd90af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5568090560322489952, guid: 8d214714f40304d86a93978406dd90af,
         type: 3}
       propertyPath: m_RootOrder
@@ -67,15 +137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MBDTF
       objectReference: {fileID: 0}
-    - target: {fileID: 6693968226395912962, guid: 8d214714f40304d86a93978406dd90af,
+    - target: {fileID: 5953714588112019810, guid: 8d214714f40304d86a93978406dd90af,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6693968226395912962, guid: 8d214714f40304d86a93978406dd90af,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: m_text
+      value: Kanye West
       objectReference: {fileID: 0}
     - target: {fileID: 7166174272935487119, guid: 8d214714f40304d86a93978406dd90af,
         type: 3}
