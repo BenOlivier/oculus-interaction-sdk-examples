@@ -10,6 +10,9 @@ public class SongManager : MonoBehaviour
     private TransformAnimator transformAnimator;
 
     [SerializeField]
+    private MusicPlayer musicPlayer;
+
+    [SerializeField]
     private Transform[] songs;
 
     [SerializeField]
@@ -21,6 +24,7 @@ public class SongManager : MonoBehaviour
         public Texture2D albumArt;
         public string title;
         public string artist;
+        public AudioClip song;
     }
 
     [SerializeField]
@@ -44,6 +48,8 @@ public class SongManager : MonoBehaviour
         transformAnimator.openTarget = Vector3.right * songSpacing;
         transformAnimator.Open();
         isAnimating = true;
+
+        musicPlayer.UpdateCurrentSong(songData[albumIndex].song);
     }
 
     [ContextMenu("Next")]
@@ -58,6 +64,8 @@ public class SongManager : MonoBehaviour
         transformAnimator.openTarget = Vector3.left * songSpacing;
         transformAnimator.Open();
         isAnimating = true;
+
+        musicPlayer.UpdateCurrentSong(songData[albumIndex].song);
     }
 
     private void UpdateIndices(int delta)
