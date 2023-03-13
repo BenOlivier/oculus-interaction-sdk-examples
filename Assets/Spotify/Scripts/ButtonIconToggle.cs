@@ -10,7 +10,7 @@ public class ButtonIconToggle : MonoBehaviour
     [SerializeField]
     private GameObject pauseIcon;
 
-    private bool isPlayIcon = false;
+    private bool isPlayIcon = true;
 
     public void ToggleIcon()
     {
@@ -18,13 +18,13 @@ public class ButtonIconToggle : MonoBehaviour
         {
             playIcon.SetActive(false);
             pauseIcon.SetActive(true);
-            isPlayIcon = true;
+            isPlayIcon = false;
         }
         else
         {
             playIcon.SetActive(true);
             pauseIcon.SetActive(false);
-            isPlayIcon = false;
+            isPlayIcon = true;
         }
     }
 }
