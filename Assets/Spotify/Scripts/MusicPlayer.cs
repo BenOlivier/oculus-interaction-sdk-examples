@@ -28,4 +28,9 @@ public class MusicPlayer : MonoBehaviour
             isPlaying = false;
         }
     }
+
+    public void UpdateVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
 }
