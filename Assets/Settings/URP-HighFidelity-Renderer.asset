@@ -13,12 +13,33 @@ MonoBehaviour:
   m_Name: BlurURP
   m_EditorClassIdentifier: 
   m_Active: 1
-  Settings: {BlurURP: {fileID: -8151331594544987647}, blurMaterial: {fileID: 2100000,
-      guid: a00afda211f274f6ca6cce958e4e13a5, type: 2}, blurPasses: 3, downSample: 2,
-    renderPassEvent: 450, blurType: 1}
-  blurController: {fileID: 0}
-  startSettings: {BlurURP: {fileID: 0}, blurMaterial: {fileID: 0}, blurPasses: 3,
-    downSample: 2, renderPassEvent: 450, blurType: 1}
+  Settings:
+    BlurURP: {fileID: -8151331594544987647}
+    blurMaterial: {fileID: 2100000, guid: a00afda211f274f6ca6cce958e4e13a5, type: 2}
+    blurPasses: 3
+    downSample: 2
+    renderPassEvent: 450
+    blurType: 1
+--- !u!114 &-2196844825261325427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e2e32e102e44abeb72209e7ce030c3, type: 3}
+  m_Name: Unlit Blur
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    BlurURP: {fileID: -2196844825261325427}
+    blurMaterial: {fileID: 2100000, guid: a00afda211f274f6ca6cce958e4e13a5, type: 2}
+    blurPasses: 3
+    downSample: 2
+    renderPassEvent: 450
+    blurType: 1
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +80,8 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
-  m_RendererFeatureMap: adc0de57c6d2eee5
+  - {fileID: -2196844825261325427}
+  m_RendererFeatureMap: adc0de57c6d2eee58dc3a453453d83e1
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -94,7 +116,7 @@ MonoBehaviour:
     zFailOperation: 0
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 0
-  m_DepthPrimingMode: 1
+  m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_ClusteredRendering: 0
