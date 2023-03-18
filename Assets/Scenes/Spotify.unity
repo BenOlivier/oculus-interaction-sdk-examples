@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.442221, g: 0.45032346, b: 0.47408795, a: 1}
+  m_IndirectSpecularColor: {r: 0.44222167, g: 0.4503216, b: 0.47408766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,12 +149,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63356536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2354, y: 0.9717, z: 0.3082}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83959798
 GameObject:
@@ -3400,7 +3400,7 @@ GameObject:
   - component: {fileID: 1584278957}
   - component: {fileID: 1584278956}
   - component: {fileID: 1584278960}
-  - component: {fileID: 1584278959}
+  - component: {fileID: 1584278961}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -3466,36 +3466,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584278954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1584278959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584278954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a0ad4ecf30771d44bf163058922924b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _editor: {fileID: 1584278960}
-  _width: 0.2
-  _height: 0.2
-  _color: {r: 1, g: 1, b: 1, a: 0.078431375}
-  _borderColor: {r: 1, g: 1, b: 1, a: 0.19607843}
-  _radiusTopLeft: 0.005
-  _radiusTopRight: 0.005
-  _radiusBottomLeft: 0.005
-  _radiusBottomRight: 0.005
-  _borderInnerRadius: 0.0008
-  _borderOuterRadius: 0
 --- !u!114 &1584278960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3514,6 +3491,30 @@ MonoBehaviour:
   _colorProperties: []
   _floatProperties: []
   _updateEveryFrame: 1
+--- !u!114 &1584278961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b459ae471b44dfbbb1378f3aa78418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _editor: {fileID: 1584278960}
+  _hoverTarget: {fileID: 63356537}
+  _width: 0.2
+  _height: 0.2
+  _color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  _borderColor: {r: 1, g: 1, b: 1, a: 0.19607843}
+  _radiusTopLeft: 0.01
+  _radiusTopRight: 0.01
+  _radiusBottomLeft: 0.01
+  _radiusBottomRight: 0.01
+  _borderInnerRadius: 0.0008
+  _borderOuterRadius: 0
 --- !u!1 &1609512624
 GameObject:
   m_ObjectHideFlags: 0
@@ -14490,7 +14491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &6600396371520903659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14929,7 +14930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7079690333416416062
 GameObject:
   m_ObjectHideFlags: 0
