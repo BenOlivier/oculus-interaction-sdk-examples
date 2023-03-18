@@ -103,11 +103,10 @@
                 fixed highlightStrength = (1 - saturate(pow(hoverDistance / i.hoverPower.x, i.hoverPower.y)));
 
                 fixed alpha = lerp(i.color.a, i.hoverColor.a, highlightStrength);
-                
-                return fixed4(alpha.xxx, 1);
 
+                fixed borderAlpha = lerp(i.borderColor.a, i.borderColor.a + i.hoverColor.a, highlightStrength);
 
-
+                fixed3 color = lerp(i.color.rgb, i.hoverColor.rgb, highlightStrength);
 
                 float sdResult = sdRoundBox(i.uv, i.dimensions.xy - i.dimensions.ww * 2.0f, i.radii);
 
@@ -115,9 +114,9 @@
 
                 if (-i.dimensions.z * 2.0f - sdResult < 0.0f)
                 {
-                    return i.borderColor;
+                    return fixed4(color, borderAlpha);
                 }
-                return i.color;
+                return fixed4(color, alpha);
             }
             ENDCG
         }
