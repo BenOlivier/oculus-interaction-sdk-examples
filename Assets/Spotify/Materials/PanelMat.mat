@@ -115,11 +115,11 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Hover: {r: 1, g: 1, b: 1, a: 1}
     - _HoverColor: {r: 0.7877358, g: 0.9400666, b: 1, a: 1}
-    - _HoverPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _HoverPower: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _HoverPosition: {r: 0, g: 0, b: 0.4, a: 0}
+    - _HoverPower: {r: 0.2, g: 0.5, b: 0, a: 0}
     - _HoverScalePower: {r: 0.1, g: 1, b: 0, a: 0}
     - _HoverValues: {r: 0.1, g: 1, b: 1, a: 1}
-    - _Radii: {r: 0, g: 0, b: 0, a: 0}
+    - _Radii: {r: 0.005, g: 0.01, b: 0.01, a: 0.01}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8307988451166146612
