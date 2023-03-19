@@ -15,6 +15,7 @@ public class MusicPlayer : MonoBehaviour
         if (isPlaying) audioSource.Play();
     }
 
+    [ContextMenu("Toggle")]
     public void TogglePlayPause()
     {
         if (!isPlaying)

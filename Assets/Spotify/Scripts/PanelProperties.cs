@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Rendering.Universal;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Oculus.Interaction
 {
@@ -11,7 +12,7 @@ namespace Oculus.Interaction
         private MaterialPropertyBlockEditor _editor;
 
         [SerializeField]
-        private Transform _hoverTarget;
+        private FingerPosition _fingerPosition;
 
         [SerializeField]
         private float _width = 1.0f;
@@ -23,7 +24,10 @@ namespace Oculus.Interaction
         private Color _color = Color.white;
 
         [SerializeField]
-        private Color _borderColor = Color.black;
+        private Color _borderColor = Color.white;
+
+        [SerializeField]
+        private Color _hoverColor = Color.white;
 
         [SerializeField]
         private float _radiusTopLeft;
@@ -94,6 +98,18 @@ namespace Oculus.Interaction
             set
             {
                 _borderColor = value;
+            }
+        }
+
+        public Color HoverColor
+        {
+            get
+            {
+                return _hoverColor;
+            }
+            set
+            {
+                _hoverColor = value;
             }
         }
 
@@ -174,6 +190,7 @@ namespace Oculus.Interaction
 
         private readonly int _colorShaderID = Shader.PropertyToID("_Color");
         private readonly int _borderColorShaderID = Shader.PropertyToID("_BorderColor");
+        private readonly int _hoverColorShaderID = Shader.PropertyToID("_HoverColor");
         private readonly int _radiiShaderID = Shader.PropertyToID("_Radii");
         private readonly int _dimensionsShaderID = Shader.PropertyToID("_Dimensions");
         private readonly int _hoverPositionShaderID = Shader.PropertyToID("_HoverPosition");
@@ -214,6 +231,7 @@ namespace Oculus.Interaction
 
             block.SetColor(_colorShaderID, _color);
             block.SetColor(_borderColorShaderID, _borderColor);
+            block.SetColor(_hoverColorShaderID, _hoverColor);
             block.SetVector(_radiiShaderID,
             new Vector4(_radiusTopRight,
                         _radiusBottomRight,
@@ -226,21 +244,15 @@ namespace Oculus.Interaction
                             _borderInnerRadius,
                             _borderOuterRadius));
 
-            block.SetVector(_hoverPositionShaderID,
-                new Vector4(_hoverTarget.position.x,
-                            _hoverTarget.position.y,
-                            _hoverTarget.position.z,
-                            0));
-
             _editor.UpdateMaterialPropertyBlock();
         }
 
         private void Update()
         {
             block.SetVector(_hoverPositionShaderID,
-                new Vector4(_hoverTarget.position.x,
-                            _hoverTarget.position.y,
-                            _hoverTarget.position.z,
+                new Vector4(_fingerPosition.Position.x,
+                            _fingerPosition.Position.y,
+                            _fingerPosition.Position.z,
                             0));
         }
 
