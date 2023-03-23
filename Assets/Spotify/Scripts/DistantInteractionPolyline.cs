@@ -21,13 +21,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-//using System.Numerics;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Oculus.Interaction.DistanceReticles
 {
-    public class DistantInteractionStraightPolylineVisual : DistantInteractionLineVisual
+    public class DistantInteractionPolyline : DistantInteractionLineVisual
     {
         [SerializeField]
         private Color _color = Color.white;
@@ -57,6 +56,9 @@ namespace Oculus.Interaction.DistanceReticles
                 _lineWidth = value;
             }
         }
+
+        [SerializeField]
+        private bool _dashed = false;
 
         private List<Vector4> _linePointsVec4;
 
