@@ -80,7 +80,7 @@ public class SongManager : MonoBehaviour
     {
         song.gameObject.SetActive(true);
         song.GetComponentInChildren<MeshRenderer>().material.SetTexture("_MainTex", songData[albumIndex].albumArt);
-        TextMeshProUGUI[] text = song.GetComponentsInChildren<TextMeshProUGUI>();
+        TMP_Text [] text = song.GetComponentsInChildren<TMP_Text>();
         text[0].text = songData[albumIndex].title;
         text[1].text = songData[albumIndex].artist;
     }
